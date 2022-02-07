@@ -1,0 +1,7 @@
+---
+
+- hosts: web
+  tasks:
+  - name: Install apache2 pkg
+    apt:
+      name: apache2      
