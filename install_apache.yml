@@ -2,6 +2,11 @@
 
 - hosts: web
   tasks:
-  - name: Install apache2 pkg
+  - name: Install apache2 pnd php packages for ubuntu
     apt:
-      name: apache2      
+      name:
+        -  apache2      
+        -  libapache2-mod-php
+      state: latest
+      update_cache: yes  
+    when: ansible_distribution == "Ubuntu"  
